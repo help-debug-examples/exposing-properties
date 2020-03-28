@@ -1,14 +1,8 @@
-//
-//  ViewController.m
-//  exposing-properties
-//
-//  Created by Derrick Showers on 3/25/20.
-//  Copyright © 2020 Derrick Showers. All rights reserved.
-//
-
 #import "ViewController.h"
 
 @interface ViewController ()
+
+@property (nonatomic, copy, nonnull, readonly) NSString *somePrivateProperty;
 
 @end
 

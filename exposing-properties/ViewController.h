@@ -1,15 +1,8 @@
-//
-//  ViewController.h
-//  exposing-properties
-//
-//  Created by Derrick Showers on 3/25/20.
-//  Copyright © 2020 Derrick Showers. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, copy, nonnull, readonly) NSString *somePublicProperty;
 
 @end
 

@@ -1,12 +1,16 @@
-//
-//  exposing_propertiesTests.m
-//  exposing-propertiesTests
-//
-//  Created by Derrick Showers on 3/25/20.
-//  Copyright © 2020 Derrick Showers. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
+#import "ViewController.h"
+
+@interface ViewController (Testing)
+
+@property (nonatomic, copy, nonnull, readwrite) NSString *somePrivateProperty;
+@property (nonatomic, copy, nonnull, readwrite) NSString *somePublicProperty;
+
+@end
+
+@implementation ViewController
+
+@end
 
 @interface exposing_propertiesTests : XCTestCase
 
@@ -23,8 +27,11 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // Test private property
+    ViewController *viewController = [[ViewController alloc] init];
+    viewController.somePublicProperty = @"hello";
+    viewController.somePrivateProperty = @"hello";
+    XCTAssertEqual(viewController.somePrivateProperty, @"hello");
 }
 
 - (void)testPerformanceExample {
